@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./public/css/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/output.css" />
     <title>MDCS</title>
-</head>
-<body class="h-screen">
-   
-<div class="h-full flex items-center justify-center p-12 flex-col">
-   <div class="">
-        <h1 class="font-bold text-3xl text-slate-800">Mango Disease Classification System</h1>
-   </div>
-    <div class="mx-auto w-full max-w-[550px] bg-white">
-      <form
-        class="py-6 px-9"
-        method="POST"
-        enctype="multipart/form-data"
-        id="image_upload_form"
-      >
-        
-        <div class="mb-6 pt-4">
-
-  
-          <div class="mb-8">
-            <input type="file" name="file" id="file" class="sr-only" />
-            <label
-              for="file"
-              class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
-            >
-              <div>
-                <span class="mb-2 block text-xl font-semibold text-[#07074D]">
-                  Drop files here
-                </span>
-                <span class="mb-2 block text-base font-medium text-[#6B7280]">
-                  Or
-                </span>
-                <span
-                  class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
-                >
-                  Browse
-                </span>
-              </div>
-            </label>
-          </div>
-          
-
-
-        </div>
-  
-        <div>
-          <button
-          type="submit"
-            class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
-          >
-            Analyze
-          </button>
-        </div>
-      </form>
+  </head>
+  <body
+    class="h-screen bg-gray-200 flex flex-col justify-center space-y-2 md:space-y-6"
+  >
+    <div
+      class="flex flex-col items-center justify-center space-y-2 px-10 md:px-0"
+    >
+      <div>
+        <img src="./public/img/Frame 1 (1).png" alt="" class="w-24" />
+      </div>
+      <div>
+        <h1 class="font-bold text-xl sm:text-3xl text-center text-slate-800">
+          Mango Disease Classification System
+        </h1>
+      </div>
     </div>
-  </div>
-</body>
+    <div class="flex items-center justify-center flex-col px-10 md:p-x12">
+      <div class="mx-auto w-full max-w-[500px] bg-white rounded-md">
+        <form
+          class="py-6 px-9"
+          method="POST"
+          enctype="multipart/form-data"
+          id="image_upload_form"
+        >
+          <div class="mb-6 pt-4" id="file_container">
+            <div class="mb-8">
+              <input type="file" name="file" id="file" class="sr-only" />
+              <label
+                for="file"
+                class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+              id="drop_zone"
+                >
+                <div>
+                  <span class="mb-2 block text-xl font-semibold text-[#07074D]">
+                    Drop files here
+                  </span>
+                  <span class="mb-2 block text-base font-medium text-[#6B7280]">
+                    Or
+                  </span>
+                  <span
+                    class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
+                  >
+                    Browse
+                  </span>
+                </div>
+              </label>
+            </div>
+           
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+            >
+              Analyze
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
 <script src="./public/js/index.js"></script>
