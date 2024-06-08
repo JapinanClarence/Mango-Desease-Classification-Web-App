@@ -1,60 +1,60 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("image_upload_form");
-    const imgFile = document.getElementById("file");
-    const dropZone = document.getElementById("drop_zone");
-    const fileContainer = document.getElementById("file_container");
-    let currentFileDisplay = null; // Variable to hold the current file display element
-  
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-    });
-  
-    dropZone.addEventListener("dragover", function (event) {
-      event.preventDefault();
-      dropZone.classList.add("bg-[#E2E5EF]");
-    });
-  
-    dropZone.addEventListener("dragleave", function (event) {
-      event.preventDefault();
-      dropZone.classList.remove("bg-[#E2E5EF]");
-    });
-  
-    dropZone.addEventListener("drop", function (event) {
-      event.preventDefault();
-      dropZone.classList.remove("bg-[#E2E5EF]");
-      const files = event.dataTransfer.files;
-      if (files.length > 0) {
-        handleFile(files[0]);
-      }
-    });
-  
-    imgFile.addEventListener("change", function (event) {
-      const files = event.target.files;
-      if (files.length > 0) {
-        handleFile(files[0]);
-      }
-    });
-  
-    function handleFile(file) {
-      if (currentFileDisplay) {
-        // If there's already a file displayed, remove it before adding the new one
-        removeFileDisplay(currentFileDisplay);
-      }
-      currentFileDisplay = createFileDisplay(file.name);
-      fileContainer.appendChild(currentFileDisplay);
+  const form = document.getElementById("image_upload_form");
+  const imgFile = document.getElementById("file");
+  const dropZone = document.getElementById("drop_zone");
+  const fileContainer = document.getElementById("file_container");
+  let currentFileDisplay = null; // Variable to hold the current file display element
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+  });
+
+  dropZone.addEventListener("dragover", function (event) {
+    event.preventDefault();
+    dropZone.classList.add("bg-[#E2E5EF]");
+  });
+
+  dropZone.addEventListener("dragleave", function (event) {
+    event.preventDefault();
+    dropZone.classList.remove("bg-[#E2E5EF]");
+  });
+
+  dropZone.addEventListener("drop", function (event) {
+    event.preventDefault();
+    dropZone.classList.remove("bg-[#E2E5EF]");
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+      handleFile(files[0]);
     }
-  
-    function createFileDisplay(fileName) {
-      const fileDisplay = document.createElement("div");
-      fileDisplay.classList.add(
-        "mb-5",
-        "rounded-md",
-        "bg-[#F5F7FB]",
-        "hover:bg-[#E2E5EF]",
-        "py-4",
-        "px-8"
-      );
-      fileDisplay.innerHTML = `
+  });
+
+  imgFile.addEventListener("change", function (event) {
+    const files = event.target.files;
+    if (files.length > 0) {
+      handleFile(files[0]);
+    }
+  });
+
+  function handleFile(file) {
+    if (currentFileDisplay) {
+      // If there's already a file displayed, remove it before adding the new one
+      removeFileDisplay(currentFileDisplay);
+    }
+    currentFileDisplay = createFileDisplay(file.name);
+    fileContainer.appendChild(currentFileDisplay);
+  }
+
+  function createFileDisplay(fileName) {
+    const fileDisplay = document.createElement("div");
+    fileDisplay.classList.add(
+      "mb-5",
+      "rounded-md",
+      "bg-[#F5F7FB]",
+      "hover:bg-[#E2E5EF]",
+      "py-4",
+      "px-8"
+    );
+    fileDisplay.innerHTML = `
           <div class="flex items-center justify-between">
             <span class="truncate pr-3 text-base font-medium text-[#07074D]">${fileName}</span>
             <button class="text-[#07074D]" onclick="removeFileDisplay(this.parentNode.parentNode)">
@@ -65,13 +65,18 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
           </div>
         `;
-      return fileDisplay;
-    }
-  
-    window.removeFileDisplay = function (element) {
-      element.remove();
-      currentFileDisplay = null; // Reset the current file display element
-      window.location.reload();
-    };
-  });
-  
+    return fileDisplay;
+  }
+
+  window.removeFileDisplay = function (element) {
+    element.remove();
+    currentFileDisplay = null; // Reset the current file display element
+    window.location.reload();
+  };
+
+function handleUpload(imgFile){
+
+}
+
+
+});
