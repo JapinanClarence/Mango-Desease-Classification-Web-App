@@ -6,9 +6,7 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
-*{
-  font-family: "Poppins", sans-serif;
-}
+
 *,
 ::before,
 ::after {
@@ -679,6 +677,11 @@ video {
   background-color: rgb(106 100 241 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#E2E5EF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 229 239 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#F5F7FB\] {
   --tw-bg-opacity: 1;
   background-color: rgb(245 247 251 / var(--tw-bg-opacity));
@@ -692,11 +695,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#E2E5EF\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 229 239 / var(--tw-bg-opacity));
 }
 
 .p-12 {
@@ -807,7 +805,7 @@ video {
   background-color: rgb(226 229 239 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 640px) {
+@media (min-width: 480px) {
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
