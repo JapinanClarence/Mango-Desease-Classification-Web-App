@@ -16,7 +16,28 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite"></script>
+    <script type="module" src="./public/js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css"
+    />
+    <script>
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    </script>
     <title>Mango Disease Classifier</title>
   </head>
   <body
@@ -65,10 +86,8 @@
                 </div>
               </label>
             </div>
-            <!-- Alert container -->
-            <div id="alertContainer"></div>
-            <!-- File display -->
-            <div id="fileDisplay"></div>
+            <!-- For file and alert display -->
+            <div id="displayContainer"></div>
           </div>
           <div>
             <button
@@ -82,28 +101,28 @@
       </div>
     </div>
     <!-- Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <div id="loading" class="loading-overlay">
-          <div
-            class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
-            role="status"
-          >
-            <span
-              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-              >Processing...</span
-            >
+    <div id="modal" class="fixed z-50 inset-0 hidden overflow-y-auto">
+      <div class="flex items-center justify-center min-h-screen">
+        <div id="modal-overlay" class="fixed inset-0 bg-gray-500 opacity-75"></div>
+        <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <!-- Your modal content here -->
+            <div class="flex flex-col items-center">
+              <img id="imagePreview" class="max-w-full rounded mb-4" />
+              <div
+                id="loading"
+                class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                role="status"
+              >
+                <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-gray-300 motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+              <div id="prediction" class="mt-4 text-left"></div>
+            </div>
           </div>
         </div>
-        <img
-          id="imagePreview"
-          src=""
-          alt="Image preview"
-          style="display: none; width: 100%; height: auto; margin-bottom: 20px"
-        />
-        <p id="prediction" class="text-center mt-4"></p>
       </div>
-    </div>
+    </div>    
   </body>
 </html>
-<script type="module" src="./public/js/script.js"></script>
