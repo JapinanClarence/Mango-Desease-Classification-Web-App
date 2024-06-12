@@ -6,10 +6,17 @@
     <link rel="stylesheet" href="./public/css/output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <link
+      rel="shortcut icon"
+      href="./public/img/Frame 1 (1).png"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite"></script>
     <title>Mango Disease Classifier</title>
   </head>
   <body
@@ -58,6 +65,8 @@
                 </div>
               </label>
             </div>
+            <!-- Alert container -->
+            <div id="alertContainer"></div>
           </div>
           <div>
             <button
@@ -70,6 +79,16 @@
         </form>
       </div>
     </div>
+     <!-- Modal -->
+     <div id="modal" class="modal">
+      <div class="modal-content">
+        <div id="loading" class="loading-overlay">
+          <span>Loading...</span>
+        </div>
+        <img id="imagePreview" src="" alt="Image preview" style="display: none; width: 100%; height: auto; margin-bottom: 20px;">
+        <p id="prediction" class="text-center mt-4"></p>
+      </div>
+    </div>
   </body>
 </html>
-<script src="./public/js/script.js"></script>
+<script type="module" src="./public/js/script.js"></script>
