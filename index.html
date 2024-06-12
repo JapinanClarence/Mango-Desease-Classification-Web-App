@@ -18,6 +18,8 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@3.8.0/dist/tf-converter.min.js"></script> -->
     <script type="module" src="./public/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
     <link
@@ -49,7 +51,7 @@
         <img src="./public/img/Frame 1 (1).png" alt="" class="w-24" />
       </div>
       <div>
-        <h1 class="font-bold text-xl sm:text-3xl text-center text-slate-800">
+        <h1 class="font-bold text-2xl sm:text-3xl text-center text-slate-800">
           Mango Disease Classification System
         </h1>
       </div>
@@ -57,7 +59,7 @@
     <div class="flex items-center justify-center flex-col px-10 md:p-x12">
       <div class="mx-auto w-full max-w-[500px] bg-white rounded-md">
         <form
-          class="py-6 px-9"
+          class="sm:py-6 sm:px-9 py-3 px-6"
           method="POST"
           enctype="multipart/form-data"
           id="image_upload_form"

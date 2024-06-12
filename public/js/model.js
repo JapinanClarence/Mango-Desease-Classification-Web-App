@@ -1,6 +1,6 @@
 export async function loadModel() {
   try {
-    const model = await tflite.loadTFLiteModel("./../model.tflite");
+    const model = await tflite.loadTFLiteModel("./model.tflite");
     return model;
   } catch (error) {
     console.error("Error loading TFLite model:", error);
