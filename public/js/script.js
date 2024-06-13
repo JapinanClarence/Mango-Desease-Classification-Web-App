@@ -9,16 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadingOverlay = document.getElementById("loading");
   const predictionText = document.getElementById("prediction");
   const modalOverlay = document.getElementById("modal-overlay");
+  let droppedFile = null;
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const files = imgFile.files[0];
 
+    const fileToProcess = droppedFile || imgFile.files[0];
+    processFile(fileToProcess);
+  });
+
+  function processFile(file) {
     const validImageTypes = ["image/jpeg", "image/png"];
-    if (!files) {
+    if (!file) {
       handleAlert("Please select an image to classify");
       return;
-    } else if (!validImageTypes.includes(files.type)) {
+    } else if (!validImageTypes.includes(file.type)) {
       handleAlert("Invalid file format. JPG and PNG only");
       return;
     }
@@ -56,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         removeFileDisplay(document.getElementById("displayContainer"));
       };
     };
-    reader.readAsDataURL(files);
-  });
+    reader.readAsDataURL(file);
+  }
 
   dropZone.addEventListener("dragover", function (event) {
     event.preventDefault();
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dropZone.classList.remove("bg-[#E2E5EF]");
     const files = event.dataTransfer.files;
     if (files.length > 0) {
+      droppedFile = files[0];
       createFileDisplay(files[0].name);
     }
   });
