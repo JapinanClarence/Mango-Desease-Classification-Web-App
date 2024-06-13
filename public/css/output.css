@@ -602,6 +602,10 @@ video {
   position: absolute;
 }
 
+.\!absolute {
+  position: absolute !important;
+}
+
 .relative {
   position: relative;
 }
@@ -622,9 +626,23 @@ video {
   z-index: 50;
 }
 
+.\!-m-px {
+  margin: -1px !important;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .mb-2 {
@@ -675,6 +693,34 @@ video {
   height: 100vh;
 }
 
+.h-\[\] {
+  height: ;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.\!h-px {
+  height: 1px !important;
+}
+
 .min-h-\[200px\] {
   min-height: 200px;
 }
@@ -693,6 +739,18 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.\!w-px {
+  width: 1px !important;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[300px\] {
+  width: 300px;
 }
 
 .max-w-\[500px\] {
@@ -753,6 +811,10 @@ video {
   overflow: hidden;
 }
 
+.\!overflow-hidden {
+  overflow: hidden !important;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -761,6 +823,10 @@ video {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.\!whitespace-nowrap {
+  white-space: nowrap !important;
 }
 
 .rounded {
@@ -785,6 +851,10 @@ video {
 
 .border-4 {
   border-width: 4px;
+}
+
+.\!border-0 {
+  border-width: 0px !important;
 }
 
 .border-solid {
@@ -843,8 +913,22 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .p-12 {
   padding: 3rem;
+}
+
+.\!p-0 {
+  padding: 0px !important;
 }
 
 .px-10 {
@@ -895,6 +979,16 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .pb-4 {
@@ -1017,6 +1111,10 @@ video {
   transition-duration: 150ms;
 }
 
+.\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
+  clip: rect(0,0,0,0) !important;
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -1034,6 +1132,15 @@ video {
 }
 
 @media (min-width: 480px) {
+  .sm\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .sm\:h-\[500px\] {
+    height: 500px;
+  }
+
   .sm\:w-full {
     width: 100%;
   }
@@ -1066,6 +1173,11 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .sm\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .sm\:pb-4 {
     padding-bottom: 1rem;
   }
@@ -1090,6 +1202,13 @@ video {
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
