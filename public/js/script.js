@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         imagePreview.src = reader.result;
         modal.classList.remove("hidden");
         loadingOverlay.classList.remove("hidden");
-        predictionText.innerText = "";
         imagePreview.style.opacity = "0.5";
 
         try {
@@ -46,7 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
               model,
               imageElement
             );
-            predictionText.innerText = `This image most likely belongs to ${className} with a ${confidence}% confidence.`;
+            displayPrediction(
+              `This image most likely belongs to ${className} with a ${confidence}% confidence.`
+            );
           } else {
             handleAlert("Failed to load the model");
           }
@@ -90,7 +91,22 @@ document.addEventListener("DOMContentLoaded", function () {
       createFileDisplay(files[0].name);
     }
   });
+  function displayPrediction(predictionTxt) {
+    const predictionContainer = document.getElementById("predictionContainer");
 
+    const prediction = document.createElement("div");
+    prediction.classList.add(
+      "mb-2",
+      "rounded-md",
+      "bg-[#F5F7FB]",
+      "py-4",
+      "px-8"
+    );
+    prediction.innerHTML = `
+      <div class="text-sm text-left">${predictionTxt}</div>
+    `;
+    predictionContainer.appendChild(prediction);
+  }
   function createFileDisplay(fileName) {
     const displayContainer = document.getElementById("displayContainer");
 
