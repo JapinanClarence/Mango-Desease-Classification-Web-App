@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const imagePreview = document.getElementById("imagePreview");
   const loadingOverlay = document.getElementById("loading");
-  const predictionText = document.getElementById("prediction");
   const modalOverlay = document.getElementById("modal-overlay");
   let droppedFile = null;
 
