@@ -17,7 +17,6 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@3.8.0/dist/tf-converter.min.js"></script> -->
     <script type="module" src="./public/js/script.js"></script>
@@ -115,11 +114,11 @@
                 class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 role="status"
               >
-                <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-gray-500 motion-reduce:animate-[spin_1.5s_linear_infinite]">
                   <span class="sr-only">Loading...</span>
                 </div>
               </div>
-              <div id="prediction" class="mt-4 text-left"></div>
+              <div id="prediction" class="mt-4 text-sm text-left"></div>
             </div>
           </div>
         </div>

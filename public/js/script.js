@@ -37,24 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
           const model = await loadModel();
           if (model) {
-            const predictions = await classifyImage(model, imageElement);
-            predictionText.innerText = `Predictions: ${predictions.join(", ")}`;
+            const { className, confidence } = await classifyImage(
+              model,
+              imageElement
+            );
+            predictionText.innerText = `This image most likely belongs to ${className} with a ${confidence}% confidence.`;
           } else {
-            Toast.fire({
-              icon: "error",
-              title: "Failed to load the model",
-            });
+            handleAlert("Failed to load the model");
           }
         } catch (error) {
           console.error("Error in model loading or prediction:", error);
-          Toast.fire({
-            icon: "error",
-            title: "An error occurred while processing the image",
-          });
+          handleAlert("An error occurred while processing the image");
         } finally {
           loadingOverlay.classList.add("hidden");
           imagePreview.style.opacity = "1";
         }
+
         removeFileDisplay(document.getElementById("displayContainer"));
       };
     };
